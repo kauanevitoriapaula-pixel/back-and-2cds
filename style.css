@@ -1,1 +1,462 @@
 
+/* Cores principais */
+:root {
+  --azul-claro: #e4f2ff;
+  --azul-pastel: #badbf5;
+  --azul-fundo: #f5faff;
+  --azul-texto: #304e68;
+  --azul-escuro: #345f87;
+  --branco: #ffffff;
+}
+
+/* Configurações gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: var(--azul-fundo);
+  color: var(--azul-texto);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--azul-escuro);
+}
+
+button {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--azul-escuro);
+  outline-offset: 5px;
+}
+
+/* Cabeçalho */
+header {
+  width: 100%;
+  background-color: var(--branco);
+  border-bottom: 1px solid var(--azul-pastel);
+}
+
+.cabecalho,
+.cabecalho-itens {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.marca {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cabecalho-imagem,
+.cabecalho_imagem {
+  width: 75px;
+  object-fit: contain;
+}
+
+.titulo_site {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  text-align: center;
+  color: var(--azul-escuro);
+}
+
+/* Menu */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+nav a {
+  font-size: 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Ícones do cabeçalho antigo */
+div.sociais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+img.sociais {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Conteúdo principal */
+main {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 30px 24px 60px;
+}
+
+/* Banner */
+.banner {
+  padding: 65px 30px;
+  background-color: var(--azul-claro);
+  border: 1px solid var(--azul-pastel);
+  border-radius: 32px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.detalhe {
+  font-size: 26px;
+  letter-spacing: 12px;
+  color: var(--azul-escuro);
+}
+
+.etiqueta {
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 18px 0;
+  font-size: clamp(36px, 7vw, 62px);
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: 32px;
+}
+
+.banner p {
+  max-width: 500px;
+  margin: 0 auto 28px;
+}
+
+/* Banner do HTML antigo */
+.banner1 {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+  background-color: var(--azul-claro);
+}
+
+.banner1 img {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 24px;
+}
+
+/* Botões */
+.botao {
+  display: inline-block;
+  padding: 11px 25px;
+  border: 1px solid var(--azul-escuro);
+  border-radius: 999px;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.botao:hover {
+  background-color: #254867;
+}
+
+/* Seções */
+section.conteudo {
+  margin-top: 30px;
+  padding: 36px;
+  border: 1px solid var(--azul-pastel);
+  border-radius: 26px;
+  background-color: var(--branco);
+}
+
+/* Sobre mim */
+.sobre {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  border: 5px solid var(--azul-fundo);
+  border-radius: 50%;
+  background-color: var(--azul-claro);
+  font-size: 55px;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Redes sociais */
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.rede {
+  padding: 12px 24px;
+  border: 1px solid var(--azul-pastel);
+  border-radius: 16px;
+  background-color: var(--azul-fundo);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.rede:hover {
+  background-color: var(--azul-claro);
+}
+
+.nota {
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+/* Jogo da memória */
+.topo-jogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.placar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.tabuleiro {
+  max-width: 440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.carta {
+  aspect-ratio: 1;
+  border: 1px solid #a9cde9;
+  border-radius: 16px;
+  background-color: var(--azul-claro);
+  color: var(--azul-escuro);
+  font-size: clamp(24px, 5vw, 36px);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.carta:hover:not(:disabled) {
+  background-color: #d3e9fb;
+  transform: translateY(-3px);
+}
+
+.carta.aberta {
+  border: 2px solid var(--azul-escuro);
+  background-color: var(--branco);
+}
+
+.carta.par {
+  border: 2px solid #83b3d8;
+  background-color: #eef7ff;
+  opacity: 1;
+  cursor: default;
+}
+
+#mensagem {
+  min-height: 28px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Cards de estudantes do HTML antigo */
+.estudante {
+  padding: 30px 20px;
+  background-color: var(--azul-fundo);
+}
+
+.estudante_titulo {
+  padding: 25px 0;
+  text-align: center;
+  font-size: clamp(26px, 5vw, 36px);
+}
+
+.estudantes_todos {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.estudante-div {
+  width: 220px;
+  padding: 24px;
+  border: 1px solid var(--azul-pastel);
+  border-radius: 24px;
+  background-color: var(--branco);
+  text-align: center;
+}
+
+.estudante-imagem {
+  width: 120px;
+  height: 120px;
+  border: 4px solid var(--azul-claro);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.estudante-nome {
+  margin: 14px 0;
+  text-align: center;
+}
+
+.estudante-icone {
+  width: 30px;
+  height: 30px;
+  margin: 4px;
+  object-fit: contain;
+}
+
+/* Rodapé */
+footer,
+.escola {
+  display: block;
+  padding: 28px 20px;
+  background-color: var(--azul-claro);
+  color: var(--azul-texto);
+  text-align: center;
+  font-size: 13px;
+}
+
+.logo_rodape {
+  width: auto;
+  height: 80px;
+  margin-bottom: 16px;
+  object-fit: contain;
+}
+
+.escola-titulo,
+.escola-título {
+  margin-bottom: 18px;
+  font-size: 22px;
+}
+
+.link {
+  color: var(--azul-escuro);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Ajustes para celular */
+@media (max-width: 600px) {
+  .cabecalho,
+  .cabecalho-itens {
+    justify-content: center;
+  }
+
+  nav {
+    gap: 18px;
+  }
+
+  main {
+    padding: 20px 16px 40px;
+  }
+
+  .banner {
+    padding: 40px 20px;
+  }
+
+  section.conteudo {
+    padding: 25px 20px;
+  }
+
+  .sobre {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .avatar {
+    margin: 0 auto;
+  }
+
+  .redes {
+    justify-content: center;
+  }
+
+  .tabuleiro {
+    gap: 8px;
+  }
+
+  .estudante-div {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Respeita a preferência por menos animações */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

@@ -1,1 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Meu cantinho pessoal com apresentação, redes sociais e jogo da memória."
+  >
+
+  <title>Meu Cantinho Azul</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Cabeçalho e menu -->
+  <header>
+    <div class="cabecalho">
+      <a class="marca" href="#inicio">
+        ♡ Meu Cantinho Azul
+      </a>
+
+      <nav aria-label="Menu principal">
+        <a href="#sobre">Sobre mim</a>
+        <a href="#redes">Redes sociais</a>
+        <a href="#jogo">Jogo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- Apresentação -->
+    <section class="banner" aria-labelledby="titulo">
+      <div class="detalhe" aria-hidden="true">
+        ✧ ♡ ✧
+      </div>
+
+      <p class="etiqueta">
+        Um pouquinho do meu mundo
+      </p>
+
+      <h1 id="titulo">
+        Leve como o céu.<br>
+        Do meu jeitinho.
+      </h1>
+
+      <p>
+        Bem-vinda ao meu cantinho! Um espaço para compartilhar
+        quem sou, minhas redes e um pouquinho de diversão.
+      </p>
+
+      <a class="botao" href="#sobre">
+        Conheça mais sobre mim ↓
+      </a>
+    </section>
+
+    <!-- Sobre mim -->
+    <section
+      id="sobre"
+      class="conteudo sobre"
+      aria-labelledby="titulo-sobre"
+    >
+      <div class="avatar" aria-hidden="true">
+        ❀
+      </div>
+
+      <!--
+        Para usar sua foto, substitua a div acima por:
+
+        <div class="avatar">
+          <img src="minha-foto.jpg" alt="Minha foto">
+        </div>
+
+        Coloque a imagem na mesma pasta do index.html.
+      -->
+
+      <div>
+        <p class="etiqueta">
+          Prazer em conhecer você
+        </p>
+
+        <h2 id="titulo-sobre">Sobre mim</h2>
+
+        <!-- Edite seu nome e sua apresentação aqui -->
+        <p>
+          Oi! Eu sou a <strong>Seu Nome</strong>.
+          Gosto de aprender coisas novas, ouvir música e
+          transformar pequenas ideias em coisas especiais.
+          Este espaço tem um pouquinho da minha personalidade:
+          delicada, criativa e cheia de sonhos. ♡
+        </p>
+      </div>
+    </section>
+
+    <!-- Redes sociais -->
+    <section
+      id="redes"
+      class="conteudo"
+      aria-labelledby="titulo-redes"
+    >
+      <p class="etiqueta">
+        Vamos nos conectar
+      </p>
+
+      <h2 id="titulo-redes">
+        Minhas redes sociais
+      </h2>
+
+      <p>
+        Mais momentos, ideias e novidades por lá.
+      </p>
+
+      <!-- Substitua os links pelos endereços dos seus perfis -->
+      <div class="redes">
+        <a
+          class="rede"
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram ↗
+        </a>
+
+        <a
+          class="rede"
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook ↗
+        </a>
+
+        <a
+          class="rede"
+          href="https://www.tiktok.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          TikTok ↗
+        </a>
+      </div>
+
+      <p class="nota">
+        Links demonstrativos: substitua pelos seus perfis no código.
+      </p>
+    </section>
+
+    <!-- Jogo da memória -->
+    <section
+      id="jogo"
+      class="conteudo"
+      aria-labelledby="titulo-jogo"
+    >
+      <p class="etiqueta">
+        Uma pausa para se divertir
+      </p>
+
+      <div class="topo-jogo">
+        <div>
+          <h2 id="titulo-jogo">
+            Jogo da memória
+          </h2>
+
+          <p id="instrucoes">
+            Vire duas cartas e encontre os seis pares.
+          </p>
+        </div>
+
+        <button
+          class="botao"
+          id="reiniciar"
+          type="button"
+        >
+          Recomeçar ↻
+        </button>
+      </div>
+
+      <div class="placar">
+        <span>
+          Jogadas:
+          <strong id="jogadas">0</strong>
+        </span>
+
+        <span>
+          Pares:
+          <strong id="pares">0</strong> / 6
+        </span>
+      </div>
+
+      <!-- As cartas são criadas pelo JavaScript -->
+      <div
+        class="tabuleiro"
+        id="tabuleiro"
+        role="group"
+        aria-label="Cartas do jogo da memória"
+        aria-describedby="instrucoes"
+      ></div>
+
+      <p
+        id="mensagem"
+        role="status"
+        aria-live="polite"
+      >
+        Encontre um par para começar. ♡
+      </p>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>
+      Feito com carinho e um toque de azul ♡<br>
+      © <span id="ano"></span> Meu Cantinho Azul
+    </p>
+  </footer>
+
+  <!-- Código que faz o jogo funcionar -->
+  <script>
+    const tabuleiro = document.getElementById("tabuleiro");
+    const jogadasTexto = document.getElementById("jogadas");
+    const paresTexto = document.getElementById("pares");
+    const mensagem = document.getElementById("mensagem");
+    const botaoReiniciar = document.getElementById("reiniciar");
+
+    const simbolos = [
+      { desenho: "♡", nome: "coração" },
+      { desenho: "☁", nome: "nuvem" },
+      { desenho: "✿", nome: "flor" },
+      { desenho: "★", nome: "estrela" },
+      { desenho: "☾", nome: "lua" },
+      { desenho: "♫", nome: "notas musicais" }
+    ];
+
+    let primeiraCarta = null;
+    let bloqueado = false;
+    let jogadas = 0;
+    let pares = 0;
+    let temporizador = null;
+
+    // Embaralha as cartas
+    function embaralhar(lista) {
+      for (let i = lista.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [lista[i], lista[j]] = [lista[j], lista[i]];
+      }
+
+      return lista;
+    }
+
+    // Esconde o símbolo de uma carta
+    function esconderCarta(carta) {
+      carta.textContent = "✧";
+      carta.classList.remove("aberta");
+
+      carta.setAttribute(
+        "aria-label",
+        "Carta " + carta.dataset.posicao + ", fechada"
+      );
+
+      carta.setAttribute("aria-pressed", "false");
+    }
+
+    // Revela uma carta e verifica se há um par
+    function virarCarta(carta, simbolo) {
+      if (
+        bloqueado ||
+        carta === primeiraCarta ||
+        carta.disabled
+      ) {
+        return;
+      }
+
+      carta.textContent = simbolo.desenho;
+      carta.classList.add("aberta");
+
+      carta.setAttribute(
+        "aria-label",
+        "Carta " + carta.dataset.posicao + ": " + simbolo.nome
+      );
+
+      carta.setAttribute("aria-pressed", "true");
+
+      // Aguarda a escolha da segunda carta
+      if (primeiraCarta === null) {
+        primeiraCarta = carta;
+        return;
+      }
+
+      jogadas++;
+      jogadasTexto.textContent = jogadas;
+
+      const cartaAnterior = primeiraCarta;
+      primeiraCarta = null;
+
+      // Verifica se os símbolos são iguais
+      if (
+        cartaAnterior.dataset.simbolo === carta.dataset.simbolo
+      ) {
+        [cartaAnterior, carta].forEach(function(item) {
+          item.classList.remove("aberta");
+          item.classList.add("par");
+          item.disabled = true;
+
+          item.setAttribute(
+            "aria-label",
+            item.getAttribute("aria-label") + ", par encontrado"
+          );
+        });
+
+        pares++;
+        paresTexto.textContent = pares;
+
+        if (pares === simbolos.length) {
+          mensagem.textContent =
+            "Parabéns! Você encontrou todos os pares em " +
+            jogadas +
+            " jogadas! ♡";
+        } else {
+          mensagem.textContent =
+            "Um par encontrado! Continue assim. ♡";
+        }
+      } else {
+        // Impede novas escolhas enquanto as cartas estão abertas
+        bloqueado = true;
+
+        mensagem.textContent =
+          "Ainda não foi um par. Tente novamente!";
+
+        temporizador = setTimeout(function() {
+          esconderCarta(cartaAnterior);
+          esconderCarta(carta);
+
+          bloqueado = false;
+          temporizador = null;
+        }, 1000);
+      }
+    }
+
+    // Cria ou reinicia a partida
+    function iniciarJogo() {
+      clearTimeout(temporizador);
+
+      temporizador = null;
+      primeiraCarta = null;
+      bloqueado = false;
+      jogadas = 0;
+      pares = 0;
+
+      jogadasTexto.textContent = "0";
+      paresTexto.textContent = "0";
+
+      mensagem.textContent =
+        "Encontre um par para começar. ♡";
+
+      tabuleiro.replaceChildren();
+
+      // Duplica os símbolos para formar seis pares
+      const cartas = embaralhar([
+        ...simbolos,
+        ...simbolos
+      ]);
+
+      cartas.forEach(function(simbolo, indice) {
+        const carta = document.createElement("button");
+
+        carta.type = "button";
+        carta.className = "carta";
+        carta.dataset.simbolo = simbolo.nome;
+        carta.dataset.posicao = indice + 1;
+
+        esconderCarta(carta);
+
+        carta.addEventListener("click", function() {
+          virarCarta(carta, simbolo);
+        });
+
+        tabuleiro.appendChild(carta);
+      });
+    }
+
+    botaoReiniciar.addEventListener("click", iniciarJogo);
+
+    // Atualiza o ano no rodapé automaticamente
+    document.getElementById("ano").textContent =
+      new Date().getFullYear();
+
+    iniciarJogo();
+  </script>
+</body>
+</html>
